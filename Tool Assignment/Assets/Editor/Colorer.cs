@@ -4,21 +4,28 @@ using UnityEditor;
 
 public class Colorer : EditorWindow
  {
-    
+   
+
     Color color;
-    [MenuItem("Window/Color them all")]
+    [MenuItem("AtreasTools/Color them all")]
     public static void ShowWindow()
     {
       GetWindow<Colorer>("Colorer");
     }
 
+
     private void OnGUI()
     {
 
-       GUILayout.Label("Color them all", EditorStyles.boldLabel);
 
-            
+
+
+        GUILayout.Label("Color them all", EditorStyles.boldLabel);
+
+        //color = EditorGUILayout.PropertyField
+        EditorGUILayout.BeginHorizontal();
         color = EditorGUILayout.ColorField("Color", color);
+        EditorGUILayout.EndHorizontal();
       
         if (GUILayout.Button("PAINT THEM ALL"))
         {
